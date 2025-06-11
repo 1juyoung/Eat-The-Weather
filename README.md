@@ -1,82 +1,65 @@
 # 🌤️ Eat the Weather
 
-<p align="center">
-  <img src="public/EatTheWeather.png" alt="Eat the Weather Logo" width="200"/>
-</p>
+![Image](https://github.com/user-attachments/assets/6eb3d246-57e4-42d8-a9a9-1b5bedcb1bda)
 
-> **날씨를 ‘보는’ 데서 그치지 않고, 직접 ‘경험하고 공유하는’ 날씨 커뮤니티 웹 애플리케이션**
 
 ---
 
-## 🧑‍🤝‍🧑 팀 소개
 
-<div align="center">
+## 🌈 주요 기능 설명
 
-<table>
-  <tr align="center">
-    <td>
-      <img src="https://avatars.githubusercontent.com/1juyoung" width="100" height="100"/><br/>
-      <b>김주영</b><br/>
-      역할<br/>
-      <a href="https://github.com/1juyoung">GitHub</a>
-    </td>
-    <td>
-      <img src="https://avatars.githubusercontent.com/dev-vming" width="100" height="100"/><br/>
-      <b>양민정</b><br/>
-      역할<br/>
-      <a href="https://github.com/dev-vming">GitHub</a>
-    </td>
-    <td>
-      <img src="https://avatars.githubusercontent.com/ChoiMHMH" width="100" height="100"/><br/>
-      <b>최민혁</b><br/>
-      역할<br/>
-      <a href="https://github.com/ChoiMHMH">GitHub</a>
-    </td>
-  </tr>
-</table>
+### 🔐 회원가입 & 로그인
+![image](https://github.com/user-attachments/assets/bffd409a-210c-4581-860f-7bea2bfc4a71)
 
-</div>
 
----
 
-## 🌈 프로젝트 소개
+### 🌡️ 날씨 민감도 기반 개인화 (온보딩)
+![image](https://github.com/user-attachments/assets/966c8fd7-eb94-4e31-94c5-887c8ff33e42)
 
-기존 날씨 앱은 숫자만 보여주는 정보 중심이지만,  
-**Eat the Weather**는 감성적인 날씨 경험과 소통을 제공합니다.
 
-- 🌍 위치 기반 실시간 날씨 정보
-- 📮 체감 날씨를 자유롭게 공유하는 게시판
-- 🧑‍💻 마이페이지로 개인 활동 관리
-- 🔐 간편 로그인 기능으로 접근성 향상
 
-<p align="center">
-  <img src="테루루_이미지_URL" alt="테루루" width="100"/>
-</p>
+### 🧭 위치 기반 날씨 정보
+- **[초기]** 브라우저 위치 → Kakao API로 행정구역 확인 → OpenWeather API로 날씨 조회
+- **[이후]** 즐겨찾기에 저장된 지역 선택 → OpenWeather API로 날씨 조회
+![image](https://github.com/user-attachments/assets/630f087a-1ae8-44e7-9589-d4a396a06978)
 
-> 위의 테루루 캐릭터들은 날씨에 따라 변화하며, 사용자가 날씨를 감각적으로 인지할 수 있도록 도와줍니다.
+
+
+### 💬 지역 게시판 기능
+- 대표 지역 기반으로 날씨 관련 이야기 공유
+- 게시글 작성 시 **날씨/의류 태그** 필수 선택
+- 댓글 작성 가능, **내 댓글만 삭제 가능**
+- 좋아요 기능 제공
+  
+<br/>
 
 ---
 
 ## 🛠️ 기술 스택
 
-- **Frontend**: Next.js, React  
-- **CSS Framework**: Tailwind CSS  
-- **Backend**: Next.js, Supabase  
-- **State Management**: zustand, TanStack Query
+![image](https://github.com/user-attachments/assets/c9eda392-524f-4418-a9c6-700e17e31c39)
+
+
 
 ---
 
-## ⏳ 진행 상황
 
-- [x] 기획 및 와이어프레임 완성
-- [x] Flow-chart 및 시스템 설계 완료
-- [ ] 기능 구현 중 (날씨/게시판/로그인/마이페이지 등)
+## 🗂 데이터베이스 구조
+![image](https://github.com/user-attachments/assets/1308739f-5f26-40c2-ba55-a657e3b67e46)
 
----
 
-## ✨ 프로젝트 목표
-
-**사용자 감정과 날씨가 연결되는 커뮤니티**  
-단순한 정보 전달이 아닌 감성 기반의 일상 공유 플랫폼
 
 ---
+
+## 📄 참고사항
+
+- Supabase는 인증 기능은 사용하지 않고, **DB 전용**으로만 활용
+- 클라이언트 API는 Axios 기반 커스텀 인스턴스 사용
+- 외부 API는 'fetch' 사용 (예: Kakao 주소 API, 날씨 API)
+- 백엔드 구조는 "클린 아키텍처" 기반 작성
+![image](https://github.com/user-attachments/assets/cdd819fe-a11d-477d-89ad-066f69bec5ec)
+
+
+  <br/>
+
+  
