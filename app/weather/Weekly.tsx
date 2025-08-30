@@ -2,6 +2,7 @@
 
 import { useUserStore } from '@/store/userStore';
 import { useWeather } from '@/lib/hooks/useWeather';
+import { useMemo } from 'react';
 import Image from 'next/image';
 
 export function Weekly() {
@@ -9,17 +10,22 @@ export function Weekly() {
   const { lat, lon } = selectedWeatherRegion ?? {};
   const { data: weatherData, isLoading } = useWeather(lat, lon);
 
-  const weeklyData =
-    weatherData?.list.filter((item) => item.dt_txt.includes('12:00:00')) ?? [];
+  const weeklyData = useMemo(() => {
+    return (
+      weatherData?.list.filter((item) => item.dt_txt.includes('12:00:00')) ?? []
+    );
+  }, [weatherData]);
 
-  const skeletonData = weeklyData.map((weather) => ({
-    day: weather.dt_txt,
-    temp_min: weather.main.temp_min + 5,
-    temp_max: weather.main.temp_max + 5,
-    feels_like: weather.main.feels_like + 5,
-    humidity: weather.main.humidity,
-    icon: weather.weather[0].icon,
-  }));
+  const skeletonData = useMemo(() => {
+    return weeklyData.map((weather) => ({
+      day: weather.dt_txt,
+      temp_min: weather.main.temp_min + 5,
+      temp_max: weather.main.temp_max + 5,
+      feels_like: weather.main.feels_like + 5,
+      humidity: weather.main.humidity,
+      icon: weather.weather[0].icon,
+    }));
+  }, [weeklyData]);
 
   return (
     <div className="grid gap-3">
